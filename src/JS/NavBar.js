@@ -1,6 +1,6 @@
 import {Nav, Row, Col } from "react-bootstrap";
 import React from "react";
-import './navBar.css';
+import './../CSS/navBar.css';
 
 function NavBar() {
     return (
@@ -14,8 +14,8 @@ function NavBar() {
                     <Col sn={8}>
                         <Nav>
                             <a href="/home" className="navigation"> Home </a>
-                            <a href="/home" className="navigation"> Products </a>
-                            <a href="/home" className="navigation"> Profile </a>
+                            <a href="/products" className="navigation"> Products </a>
+                            <a href="/profile" className="navigation"> Profile </a>
                         </Nav>
                     </Col>
                 </Row>
