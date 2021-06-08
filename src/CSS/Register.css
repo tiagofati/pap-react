@@ -1,0 +1,51 @@
+.registerContainer {
+    height: 650px;
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+
+}
+.navRegister {
+    padding: 7px;
+    background: transparent;
+    position: relative;
+    color: black;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.inputCampos {
+    width: 80%;
+    padding: 10px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: #fff;
+    margin-top: 15px;
+    font-size: 13px;
+
+}
+.submitBtn {
+    width: 50%;
+    font-size: 20px;
+    padding: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+
+}
+.terms {
+    font-size: 12px;
+    margin-top: 25px;
+    margin-left: 10%;
+    width: 80%;
+  
+}

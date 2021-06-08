@@ -1,20 +1,26 @@
 .card {
-    height: 300px;
+    height: 320px;
     width: 240px;
     border: solid black 2px;
     margin-left: -15px;
     padding: 10px;
     text-align: center;
+    color:black;
+}
+.card:hover {
+    color:black;
+    text-decoration: none;
 }
 .imgOnCard {
     height: 180px;
 }
-.nameProd {
-    font-size: 20px;
+.nameProds {
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
+
 }
 .price {
-    font-size: 20px;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }

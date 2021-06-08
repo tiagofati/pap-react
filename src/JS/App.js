@@ -6,6 +6,7 @@ import Products from './Products.js';
 import Container from 'react-bootstrap/Container'
 import ProductsDetails from './ProductsDetails.js';
 import Profile from './Profile.js';
+import Register from './Register.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/products" component={Products} />
           <Route exact path="/productsDetails" component={ProductsDetails} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/register" component={Register} />
           <Redirect to="/home" />
         </Switch>
       </BrowserRouter>

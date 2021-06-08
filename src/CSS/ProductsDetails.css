@@ -9,11 +9,15 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     margin-top: 20px;
+   
 
 }
 .presImgs {
-    width: 100%;
-    border: solid black 1px;
+    width: 99.5px;
+
+}
+.presImgs:hover {
+   border: solid black 1px;
 }
 .sizes {
     border: solid black 0.1px;
@@ -26,5 +30,31 @@
 
 }
 .tableSizes {
-    margin-top: 40px;
+    margin-top: 60px;
+}
+.nameProd {
+    font-size: 30px;
+    margin-top: 50px;
+}
+.priceProd {
+    font-size: 30px;
+    margin-top: 30px;
+}
+.description {
+    text-align: justify;
+    border: solid black 1px;
+    margin-top: 20px;
+    font-size: 14px;
+
+}
+.addCart {
+    height: 35px;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 0;
 }

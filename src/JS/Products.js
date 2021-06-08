@@ -11,86 +11,86 @@ function Products() {
                 <Col sm={8}>
                     <Row>
                         <Col sm={3}>
+                            <a href="productsDetails"className="card">
+                                <img src="image1.jpg" className="imgOnCard"></img>
+                                <p className="nameProds"> Name of Product </p>
+                                <p className="price"> Price </p>
+                            </a>
+                        </Col>
+                        <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col>
                         <Col sm={3}>
                             <div className="card">
                                 <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
-                                <p className="price"> Price </p>
-                            </div>
-                        </Col>
-                        <Col sm={3}>
-                            <div className="card">
-                                <img src="image1.jpg" className="imgOnCard"></img>
-                                <p className="nameProd"> Name of Product </p>
+                                <p className="nameProds"> Name of Product </p>
                                 <p className="price"> Price </p>
                             </div>
                         </Col> 
