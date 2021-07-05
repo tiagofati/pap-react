@@ -1,10 +1,35 @@
-#test {
+.containerProfile {
     border: solid black 1px;
+    height: 600px;
+    margin-left: 170px;
+    margin-right: 170px;
+    padding-top: 30px;
+    margin-top: 50px;
+}
+.tabs {
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    
+}
+.tabs:hover {
+    color: white;
+    background-color: black;
     
 }
 .title {
-    border: solid black 1px;
-    width: 20%;
-    height: 30px;
-    
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.text {
+    font-size: 15px;
+}
+.subTitle{
+    font-size: 30px;
+    margin-top: 50px;
+}
+.subSubTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }

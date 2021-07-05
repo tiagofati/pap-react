@@ -14,24 +14,18 @@
 }
 .presImgs {
     width: 99.5px;
+    border: solid black 1px;
 
 }
-.presImgs:hover {
-   border: solid black 1px;
-}
-.sizes {
-    border: solid black 0.1px;
-    height: 35px;
-    width: 50px;
-    margin-left: -14px;
-    margin-top: 5px;
-    text-align: center;
-    font-size: 13px;
+
+.unselectedImg {
+    cursor: pointer;   
+    
+width: 99.5px;
+
 
 }
-.tableSizes {
-    margin-top: 60px;
-}
+
 .nameProd {
     font-size: 30px;
     margin-top: 50px;
@@ -57,4 +51,26 @@
     font-size: 15px;
     border-radius: 10px;
     border: 0;
+}
+
+.gridSizes {
+    display:grid;
+    margin: 5px;
+    grid-template-columns: auto auto auto auto auto;
+    border: solid #cdcdcd 1px;
+}
+.sizes {
+    border: solid #cdcdcd 1px;
+    height: 40px;
+    cursor: pointer;
+}
+.selectSize {
+    border: solid black 1px;
+    height: 40px;
+    cursor: pointer;
+}
+.unavailableSize {
+    border: solid #cdcdcd 1px;
+    height: 40px;
+    color: #CDCDCD;
 }
