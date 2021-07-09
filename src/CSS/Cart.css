@@ -1,4 +1,55 @@
 .hideElement {
+    border: solid black 1px;
+    width: 25%;
+    margin-left: 70%;
+    height: 500px;
+    z-index: -999;
+    position: absolute;
     visibility: hidden;
     
+    
+}
+.showElement {
+    border: solid black 1px;
+    width: 25%;
+    margin-left: 73.5%;
+    height: 500px;
+    z-index: 999;
+    overflow-y: scroll;
+    position: absolute;
+    background-color: white;
+    
+    
+}
+.prodCart {
+    border: solid black 1px;
+}
+
+.itemCart {
+    border: solid black 1px;
+    height: 100px;
+    display: flex;
+    width: 300px;
+}
+
+.imgProdCart {
+    border: solid black 0.1px;
+    height: 90px;
+    width: 90px;
+    margin-top: 5px;
+}
+
+.nameText {
+    border: solid black 1px;
+    margin-left: 10px;
+    height: 40px;
+    width: 160px;
+}
+
+.priceProduct {
+    border: solid black 1px;
+    width: 65px;
+    height: 20px;
+    margin-left: 10px;
+    padding: 2px;
 }

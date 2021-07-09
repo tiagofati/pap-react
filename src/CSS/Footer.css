@@ -1,12 +1,15 @@
 .footerContainer {
     height: 250px;
     margin-top: 40px;
+
     color: white;
     display: flex;
-    border: solid black 1px;
     background-color: black;
     width: 100%;
     padding-top: 20px;
+    margin-left: -15px;
+    position: absolute;
+ 
 }
 
 .leftBox {

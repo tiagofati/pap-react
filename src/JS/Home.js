@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Carousel, Image } from "react-bootstrap";
 import './../CSS/Home.css';
 import Footer from './Footer.js';
+import Container from 'react-bootstrap/Container'
 
 
 function Home() {
@@ -77,36 +78,39 @@ function Home() {
 
     return (
         <>
-            <Carousel>
-                <Carousel.Item>
-                    <img className="d-block w-100" src="../images/carousel1.jpg" alt="First slide" />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className="d-block w-100" src="../images/carousel2.jpg" alt="Second slide" />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img className="d-block w-100" src="../images/carousel3.jpg" alt="Third slide" />
-                </Carousel.Item>
-            </Carousel>
-            <Row>
-                <div className="subTitleDiv">
-                    <h1 className="subTitle">Best Sellers</h1>
-                </div>
-            </Row>
-            <Row className="listBlocks">
-                {getProductTable()}
-            </Row>
-            <Row>
-                <Image src="banner.jpg" className="bannerImg"></Image>
-            </Row>
-            <Row >
-                <div className="subTitleDiv">
-                    <h1 className="subTitle">New Releases</h1>
-                </div>
-            </Row>
-            <Row className="listBlocks">
-                {getRandomFour()}
-            </Row>
+            <Container fluid>
+                <Carousel style={{marginTop:"10px"}}>
+                    <Carousel.Item>
+                        <img className="d-block w-100" src="../images/carousel1.jpg" alt="First slide" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img className="d-block w-100" src="../images/carousel2.jpg" alt="Second slide" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img className="d-block w-100" src="../images/carousel3.jpg" alt="Third slide" />
+                    </Carousel.Item>
+                </Carousel>
+                <Row>
+                    <div className="subTitleDiv">
+                        <h1 className="subTitle">Best Sellers</h1>
+                    </div>
+                </Row>
+                <Row className="listBlocks">
+                    {getProductTable()}
+                </Row>
+                <Row>
+                    <Image src="banner.jpg" className="bannerImg"></Image>
+                </Row>
+                <Row >
+                    <div className="subTitleDiv">
+                        <h1 className="subTitle">New Releases</h1>
+                    </div>
+                </Row>
+                <Row className="listBlocks">
+                    {getRandomFour()}
+                </Row>
+                
+            </Container>
             <Footer />
         </>
     )

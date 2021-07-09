@@ -4,13 +4,22 @@ import Footer from './Footer.js';
 import './../CSS/ProductsDetails.css';
 
 
-function ProductsDetails(props) {
+function ProductsDetails({props, addToCart} ) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectSize, setSelectSize] = useState(35);
     const [selectedImg, setSelectedImg] = useState('LateralEsq');
     const [selectedImgBorder, setSelectedImgBorder] = useState(1);
+
+    const product = {
+        idProd: "",
+        nameProd : "",
+        price: 1,
+        resourceImg: "",
+        size: 2,
+        
+    };
 
     useEffect(() => {
         fetch(`https://localhost:44360/products/${props.match.params.idProd}`, {
@@ -64,14 +73,25 @@ function ProductsDetails(props) {
 
         })
     }
+    function addObject() {
 
+        product.idProd = data.idProd;
+        product.nameProd = data.nameProd;
+        product.price = data.price;
+        product.resourceImg = data.resourceImg;
+        product.size = selectSize;
+
+        console.log(product.size)
+        addToCart(product);
+    }
+    
     return (
         <>
-
-            <Row style={{ marginTop: "50px", height: "1000px" }}>
+            
+            <Row style={{ marginTop: "50px" }}>
                 <Col sm={2}></Col>
                 <Col sm={8}>
-                    <Row style={{ height: "800px" }}>
+                    <Row style={{ height: "650px", marginBottom:"100px"}}>
                         <Col sm={8} style={{ border: "solid black 1px" }}>
                             <img src={`../images/${selectedImg}/${data.resourceImg}`} className="mainImg"></img>
                             <div className="presImg">
@@ -112,11 +132,8 @@ function ProductsDetails(props) {
                             <p className="priceProd"> {data.price}€ </p>
                             <div className="gridSizes">
                                 {getSizes()}
-
                             </div>
-                            
-
-                            <button className="addCart">Add to Cart</button>
+                            <button className="addCart" onClick={() => addObject()}>Add to Cart</button>
                         </Col>
                     </Row>
                 </Col>

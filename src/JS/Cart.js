@@ -1,30 +1,24 @@
 import './../CSS/Cart.css'
-import {Card, ListGroup} from 'react-bootstrap'
+import React from "react";
 
 
-export default function Cart({ isActive }) {
+export default function Cart({ isActive, cart }) {
 
     return (
      <>
-        {/*<Card  className={isActive ? "showElement" : "hideElement"}>
-            <ListGroup variant="flush">
-                <ListGroup.Item>
-                    <div>
-                        asd
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <div>
-                        asd
-                    </div>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <div>
-                        asd
-                    </div>
-                </ListGroup.Item>
-            </ListGroup>
-        </Card>*/}
+        <div  className={isActive ? "showElement" : "hideElement"}>
+           
+                {cart.map(
+                    prod => 
+                        <div class="itemCart"> 
+                            <img src={`../images/LateralEsq/${prod.resourceImg}`} class="imgProdCart"></img>
+                            <p class="nameText"> {prod.nameProd}</p>
+                            <p class="priceProduct"> {prod.price}  </p>
+                        </div>
+                    
+                )}
+           
+        </div>
        </>
     );
 }
