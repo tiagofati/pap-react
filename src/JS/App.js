@@ -8,27 +8,38 @@ import ProductsDetails from './ProductsDetails.js';
 import Profile from './Profile.js';
 import Register from './Register.js';
 
-
 function App() {
-  const [cart, setCart ] = useState(sessionStorage.getItem("products") === "" ? JSON.stringify(sessionStorage.getItem("products")) : []); 
-  
+  const [cart, setCart ] = useState([]); 
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    setCart(JSON.parse(sessionStorage.getItem("products")) || [])   
+    
+  }, []);
+
+  function deleteOne(idx) { 
+    const currentList = cart
+    currentList.splice(idx, 1)
+    setCart(currentList)
+    setCount(count+1)
+
+  }
+
   function addToCart (product) {
     const currentList = cart
     currentList.push(product)
-    sessionStorage.setItem("products", currentList);
+    sessionStorage.setItem("products", JSON.stringify(currentList));
     setCart(currentList)
-    console.log(sessionStorage.getItem("products"))
+    setCount(count+1)
   }
-
 
 
   return (
     <Container fluid>
       
       <BrowserRouter>
-      <NavBar cart={cart}/>
+      <NavBar cart={cart} deleteOne={deleteOne}/>
         <Switch>
-          
           <Route exact path="/home" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/productsDetails/:idProd" render={(props => <ProductsDetails addToCart={addToCart} props={props}/> )} /> 

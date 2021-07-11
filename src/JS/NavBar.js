@@ -1,15 +1,18 @@
 import { Nav, Row, Col, Form } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal'
-import { React, useState,  useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import './../CSS/navBar.css';
 import Cart from "./Cart";
 import firebase from "../fire";
 
-function NavBar({ cart, props }) {
+function NavBar({ cart, deleteOne }) {
     const [modalShow, setModalShow] = useState(false);
     const [elementShow, setElementShow] = useState(false);
     const [userState, setUserState] = useState(null);
+    const [checkingUserState, setCheckingUserState] = useState(true);
+    const [error, setError] = useState("");
+
 
     function MyVerticallyCenteredModal() {
         const [email, setEmail] = useState("");
@@ -19,12 +22,15 @@ function NavBar({ cart, props }) {
 
         const login = async (e) => {
             e.preventDefault();
-            let user = await firebase.login(email, password);
-            console.log(user);
-            setRedirect(true);
+            let result = await firebase.login(email, password);
+            if (result.success) {
+                setRedirect(true);
+            } else {
+                setError(result.data.message)
+            }
         }
         const redirect = routeRedirect;
-        if(redirect){
+        if (redirect) {
             return <Redirect to="/" />
         }
         return (
@@ -39,18 +45,20 @@ function NavBar({ cart, props }) {
                         Login
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ paddingLeft: "80px", height: "200px" }} >
-                    <Form onSubmit={login}>
+                <Modal.Body style={{ height: "200px" }} >
+                    <Form style={{paddingLeft:"80px"}} onSubmit={login}>
                         <input type="email" id="email" class="inputCampos" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
                         <input type="password" class="inputCampos" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
-                        <button 
-                        value="Create Account" 
-                        className="btnSubmitLogin" 
-                        onClick={() => console.log("abc")}>Login</button>
+                        <button
+                            value="Create Account"
+                            className="btnSubmitLogin"
+                            onClick={() => console.log("abc")}
+                        > Login
+                        </button>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    
+                    <p className="error">{error}</p>
                 </Modal.Footer>
             </Modal>
         );
@@ -59,42 +67,51 @@ function NavBar({ cart, props }) {
     useEffect(() => {
         firebase.getUserState().then(user => {
             if (user) {
-            setUserState(user);
-            console.log(user);
+                setUserState(user);
+                console.log(user);
+
             }
-    
+            setCheckingUserState(false)
         })
     })
-   
-    const logout = () => {
-      firebase.logout();
-      setUserState(null);
-  
-    }
-    
-    let buttons;
-    if (userState != null) {
-      buttons = (
-         <a className="butLogin" onClick={logout}>Logout</a>
 
-      )
-    } else {
-  
-      buttons = (
-        <>
-            <a onClick={() => setModalShow(true)} className="login"> Login </a>
-            <a href="/register" className="Register"> Register </a>
-        </>
-  
-      )
+    const logout = () => {
+        firebase.logout();
+        setUserState(null);
+
+    }
+
+    let buttons;
+    if (!checkingUserState) {
+        if (userState != null) {
+            buttons = (
+                <a className="Logout" onClick={logout}>Logout</a>
+
+            )
+        } else {
+
+            buttons = (
+                <>
+                    <a onClick={() => setModalShow(true)} className="login"> Login </a>
+                    <a href="/register" className="Register"> Register </a>
+                </>
+
+            )
+        }
+    }
+
+    function total() {
+        var total1 = 0;
+        cart.map(prod => total1 += prod.price)
+        return total1;
+
     }
     return (
         <>
-
             {MyVerticallyCenteredModal()}
             <Row className="navBar">
                 <Col sm={2} className="d-flex justify-content-center">
-                    <a href="/home"> <img src="../images/logo.png" style={{marginTop:"-1px"}}></img></a>
+                    <a href="/home"> <img src="../images/logo.png" style={{ marginTop: "-1px" }}></img></a>
                 </Col>
                 <Col sm={7} className="d-flex justify-content-center">
                     <Nav>
@@ -102,18 +119,18 @@ function NavBar({ cart, props }) {
                         <a href="/products" className="navigation"> Products </a>
                     </Nav>
                 </Col>
-                <Col sm={3} className="d-flex justify-content-center" style={{padding:"8px"}}>  
+                <Col sm={3} className="d-flex justify-content-center" style={{ padding: "8px" }}>
                     <div className="divLR">
                         {buttons}
                     </div>
                     <button className="btnCart" id="cart" onClick={() => setElementShow(!elementShow)}>
                         <i class="fas fa-cart-plus fa-2x"></i>
-                        <span className="montante">00.00€</span>
+                        <span className="montante">{total()}€</span>
                     </button>
                 </Col>
 
             </Row>
-            <Cart isActive={elementShow} cart={cart} />
+            <Cart isActive={elementShow} cart={cart} deleteOne={deleteOne} />
         </>
     )
 }

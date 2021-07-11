@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
+import useState from "react";
 
 var Config = {
     apiKey: "AIzaSyBsFVdolNr71_CwHiCOTbjgolxbf00GR1k",
@@ -22,17 +23,30 @@ var Config = {
       this.firestore = firebase.firestore();
     }
     async login(email, password){
+      var success = true;
+      var error = null;
       const user = await firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
-        console.log(err);
+        success = false
+        error = err
       });
-      return user;
+      return {
+        "success": success, 
+        data: success ? user : error
+      };
     }
 
     async signin(email, password){
+      var success = true;
+      var error = null;
       const user = await firebase.auth().createUserWithEmailAndPassword(email, password).catch(err =>{
-        console.log(err);
+           success = false
+           error = err
+        
       });
-      return user;
+      return {
+        "success": success, 
+        data: success ? user : error
+      };
     }
 
 

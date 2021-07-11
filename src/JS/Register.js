@@ -10,15 +10,24 @@ import { Redirect } from 'react-router-dom';
 function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const [routeRedirect, setRedirect] = useState(false);
 
     const signin = async(e) => {
         e.preventDefault();
-        let user = await firebase.signin(email, password);
-        console.log(user)
-        setRedirect(true);
+        let result = await firebase.signin(email, password);
+        if (result.success) {
+            setRedirect(true);
+        } else {
+            setError(result.data.message)
+        }
+        console.log(result);
+        
+        
+       
     }
+   
     const redirect = routeRedirect;
     if(redirect){
         return <Redirect to="/" />
@@ -37,6 +46,7 @@ function Register() {
                             <input type="text" class="inputCampos" placeholder="Last Name"></input>
                             <input type="tel" class="inputCampos" placeholder="Phone Number"></input>
                             <input type="Date" class="inputCampos" placeholder=" Date of Birth"></input>
+                            <p className="error">{error}</p>
                             <p className="terms"> By creating an account, you agree to FatiExpress's Privacy Policy and Terms of Use.</p>
                             <button type="submit" class="submitBtn">Register</button>
                         </Form>

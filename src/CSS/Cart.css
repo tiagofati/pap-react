@@ -18,6 +18,7 @@
     overflow-y: scroll;
     position: absolute;
     background-color: white;
+    padding: 5px;
     
     
 }
@@ -29,27 +30,30 @@
     border: solid black 1px;
     height: 100px;
     display: flex;
-    width: 300px;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
 }
 
 .imgProdCart {
     border: solid black 0.1px;
-    height: 90px;
+    height: 100%;
     width: 90px;
-    margin-top: 5px;
+ 
 }
 
 .nameText {
-    border: solid black 1px;
     margin-left: 10px;
-    height: 40px;
-    width: 160px;
+    height: 45px;
+    width: 140px;
+    font-size: 15px;
+    margin-top: 5px;
+ 
 }
 
 .priceProduct {
-    border: solid black 1px;
     width: 65px;
-    height: 20px;
-    margin-left: 10px;
-    padding: 2px;
+    font-size: 20px;
+    text-align: center;
+  
 }

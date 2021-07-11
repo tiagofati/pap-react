@@ -12,8 +12,8 @@
     text-decoration: none;
     cursor: pointer;
     margin-left: 20px;
-}
 
+}
 .navbarBrand:hover {
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
@@ -22,11 +22,10 @@
     cursor: pointer;
 
 }
-
 #email {
     margin-bottom: 20px;
-}
 
+}
 .navigation {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -44,8 +43,8 @@
     text-decoration: none;
     cursor: pointer;
     width: 100px;
-}
 
+}
 .login {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -59,7 +58,6 @@
     padding: 5px;
 
 }
-
 .login:hover{
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -69,7 +67,6 @@
     background-color: black;
 
 }
-
 .Register {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -82,7 +79,6 @@
     padding: 5px;
 
 }
-
 .Register:hover {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -92,13 +88,36 @@
     background-color: black;
 
 }
+.Logout {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    border: solid black 2px;
+    padding: 5px;
+    margin-left: 80px;
 
+}
+.Logout:hover {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    border: solid black 2px;
+    padding: 5px;
+    background-color: black;
+
+}
 .divLR {
     width: 180px;
-    
-    
+      
 }
-
 .btnCart {
     border: solid black 1px;
     cursor: pointer;
@@ -112,7 +131,6 @@
     margin-top: -4px;
 
 }
-
 .montante {
     font-size: 25px;
     margin-left: 10px;
@@ -122,20 +140,31 @@
     width: 15%;
     margin-left: 42.5%;
     font-size: 25px;
+
 }
 .btnSubmitLogin{
     border: solid black 1px;
     background-color: black;
     color: white;
-    width: 25%;
+    width: 30%;
     border-radius: 10px;
-    margin-right: 37.5%;
     height: 40px;
     font-size: 20px;
+    margin-top: 20px;
+    margin-left: 27%;
+  
+   
+    
 }
 .btnSubmitLogin:hover{
     border: solid black 1px;
     background-color: black;
     color: white;
+
+}
+.error {
+    font-size: 10px;
+    margin-left: -30px;
+
 }
 

@@ -17,7 +17,7 @@ function ProductsDetails({props, addToCart} ) {
         nameProd : "",
         price: 1,
         resourceImg: "",
-        size: 2,
+        size: 2.00,
         
     };
 
