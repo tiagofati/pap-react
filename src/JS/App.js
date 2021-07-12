@@ -20,6 +20,7 @@ function App() {
   function deleteOne(idx) { 
     const currentList = cart
     currentList.splice(idx, 1)
+    sessionStorage.setItem("products", JSON.stringify(currentList));
     setCart(currentList)
     setCount(count+1)
 

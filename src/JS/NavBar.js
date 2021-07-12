@@ -45,10 +45,11 @@ function NavBar({ cart, deleteOne }) {
                         Login
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ height: "200px" }} >
+                <Modal.Body style={{ height: "280px" }} >
                     <Form style={{paddingLeft:"80px"}} onSubmit={login}>
                         <input type="email" id="email" class="inputCampos" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
                         <input type="password" class="inputCampos" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+                        <p className="error">{error}</p>
                         <button
                             value="Create Account"
                             className="btnSubmitLogin"
@@ -58,7 +59,7 @@ function NavBar({ cart, deleteOne }) {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <p className="error">{error}</p>
+
                 </Modal.Footer>
             </Modal>
         );

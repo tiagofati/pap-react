@@ -15,14 +15,14 @@
 .presImgs {
     width: 99.5px;
     border: solid black 1px;
+    height: 100px;
 
 }
 
 .unselectedImg {
     cursor: pointer;   
-    
-width: 99.5px;
-
+    width: 99.5px;
+    height: 100px;
 
 }
 

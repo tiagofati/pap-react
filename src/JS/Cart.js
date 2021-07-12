@@ -15,11 +15,11 @@ export default function Cart({ isActive, cart, deleteOne }) {
                         
                             <img src={`../images/LateralEsq/${prod.resourceImg}`} class="imgProdCart"></img>
                             <p class="nameText"> {prod.nameProd}</p>
-                            <p class="priceProduct"> {prod.price}  </p>
-                            <button  onClick={() => deleteOne(idx)}><i class="fas fa-times"></i></button>
+                            <p class="priceProduct"> {prod.price}€ </p>
+                            <button  className="delete" onClick={() => deleteOne(idx)}><i class="fas fa-times"></i></button>
                         </div>    
                 )}
-           <button></button>
+           <button className="finishOrder">Finish Order</button>
         </div>
        </>
     );
