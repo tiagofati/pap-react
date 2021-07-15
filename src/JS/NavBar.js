@@ -6,17 +6,18 @@ import './../CSS/navBar.css';
 import Cart from "./Cart";
 import firebase from "../fire";
 
-function NavBar({ cart, deleteOne }) {
+function NavBar({ cart, deleteOne, addEmail }) {
     const [modalShow, setModalShow] = useState(false);
     const [elementShow, setElementShow] = useState(false);
     const [userState, setUserState] = useState(null);
     const [checkingUserState, setCheckingUserState] = useState(true);
     const [error, setError] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
 
     function MyVerticallyCenteredModal() {
-        const [email, setEmail] = useState("");
-        const [password, setPassword] = useState("");
+        
 
         const [routeRedirect, setRedirect] = useState(false);
 
@@ -53,7 +54,7 @@ function NavBar({ cart, deleteOne }) {
                         <button
                             value="Create Account"
                             className="btnSubmitLogin"
-                            onClick={() => console.log("abc")}
+                            onClick={() => addEmail(email)}
                         > Login
                         </button>
                     </Form>
@@ -69,7 +70,6 @@ function NavBar({ cart, deleteOne }) {
         firebase.getUserState().then(user => {
             if (user) {
                 setUserState(user);
-                console.log(user);
 
             }
             setCheckingUserState(false)
@@ -79,8 +79,11 @@ function NavBar({ cart, deleteOne }) {
     const logout = () => {
         firebase.logout();
         setUserState(null);
+        
+        sessionStorage.removeItem('email');
 
     }
+ 
 
     let buttons;
     if (!checkingUserState) {
@@ -112,7 +115,7 @@ function NavBar({ cart, deleteOne }) {
             {MyVerticallyCenteredModal()}
             <Row className="navBar">
                 <Col sm={2} className="d-flex justify-content-center">
-                    <a href="/home"> <img src="../images/logo.png" style={{ marginTop: "-1px" }}></img></a>
+                    <a href="/home"> <img src="../images/logo.png" style={{ marginTop: "-1px" }} alt=""></img></a>
                 </Col>
                 <Col sm={7} className="d-flex justify-content-center">
                     <Nav>
@@ -131,7 +134,7 @@ function NavBar({ cart, deleteOne }) {
                 </Col>
 
             </Row>
-            <Cart isActive={elementShow} cart={cart} deleteOne={deleteOne} />
+            <Cart isActive={elementShow}  setModalShow={setModalShow} cart={cart} deleteOne={deleteOne} check={userState} email={email}/>
         </>
     )
 }

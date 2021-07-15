@@ -31,7 +31,7 @@ function Products() {
         return data.map(
             product => <Col sm={3}>
                 <a href={`productsDetails/${product.idProd}`} className="card">
-                    <img src={`../images/LateralEsq/${product.resourceImg}`} className="imgOnCard"></img>
+                    <img src={`../images/LateralEsq/${product.resourceImg}`} className="imgOnCard" alt=""></img>
                     <p className="nameProds" > {product.nameProd} </p>
                     <p className="price"> {product.price} € </p>
                 </a>

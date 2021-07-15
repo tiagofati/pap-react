@@ -26,6 +26,11 @@ function App() {
 
   }
 
+  function addEmail(email) {
+    sessionStorage.setItem("email", email);
+
+  }
+  
   function addToCart (product) {
     const currentList = cart
     currentList.push(product)
@@ -33,23 +38,21 @@ function App() {
     setCart(currentList)
     setCount(count+1)
   }
-
-
   return (
     <Container fluid>
-      
       <BrowserRouter>
-      <NavBar cart={cart} deleteOne={deleteOne}/>
+      <NavBar cart={cart} deleteOne={deleteOne} addEmail={addEmail}/>
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/productsDetails/:idProd" render={(props => <ProductsDetails addToCart={addToCart} props={props}/> )} /> 
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/register" render={( () => <Register  addEmail={addEmail}/> )}/>
           <Redirect to="/home" />
         </Switch>
       </BrowserRouter>
     </Container>
+    
   );
 }
 

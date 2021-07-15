@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 
 
 
-function Register() {
+function Register( {addEmail}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -22,8 +22,6 @@ function Register() {
         } else {
             setError(result.data.message)
         }
-        console.log(result);
-        
         
        
     }
@@ -48,7 +46,7 @@ function Register() {
                             <input type="Date" class="inputCampos" placeholder=" Date of Birth"></input>
                             <p className="error">{error}</p>
                             <p className="terms"> By creating an account, you agree to FatiExpress's Privacy Policy and Terms of Use.</p>
-                            <button type="submit" class="submitBtn">Register</button>
+                            <button type="submit" class="submitBtn" onClick={() => addEmail(email)}>Register</button>
                         </Form>
                     </section>
                 </Col>

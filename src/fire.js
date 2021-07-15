@@ -2,7 +2,7 @@ import firebase from 'firebase';
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/storage";
-import useState from "react";
+
 
 var Config = {
     apiKey: "AIzaSyBsFVdolNr71_CwHiCOTbjgolxbf00GR1k",

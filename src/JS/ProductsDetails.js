@@ -58,7 +58,7 @@ function ProductsDetails({props, addToCart} ) {
             var sizeExists = data.availableSizes.includes(size)
 
             if (sizeExists) {
-                if (selectSize == size) {
+                if (selectSize === size) {
                     className = "selectSize"
                 } else {
                     className = "sizes"
@@ -93,37 +93,43 @@ function ProductsDetails({props, addToCart} ) {
                 <Col sm={8}>
                     <Row style={{ height: "650px", marginBottom:"100px"}}>
                         <Col sm={8} style={{ border: "solid black 1px" }}>
-                            <img src={`../images/${selectedImg}/${data.resourceImg}`} className="mainImg"></img>
+                            <img src={`../images/${selectedImg}/${data.resourceImg}`} className="mainImg" alt=""></img>
                             <div className="presImg">
                                 <img
                                     src={`../images/LateralEsq/${data.resourceImg}`}
-                                    className={selectedImgBorder == 1 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('LateralEsq'); setSelectedImgBorder(1) }}>
+                                    className={selectedImgBorder === 1 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('LateralEsq'); setSelectedImgBorder(1) }}
+                                    alt="">
                                 </img>
                                 <img
                                     src={`../images/LateralDta/${data.resourceImg}`}
-                                    className={selectedImgBorder == 2 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('LateralDta'); setSelectedImgBorder(2) }}>
+                                    className={selectedImgBorder === 2 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('LateralDta'); setSelectedImgBorder(2) }}
+                                    alt="">
                                 </img>
                                 <img
                                     src={`../images/Cima/${data.resourceImg}`}
-                                    className={selectedImgBorder == 3 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('Cima'); setSelectedImgBorder(3) }}>
+                                    className={selectedImgBorder === 3 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('Cima'); setSelectedImgBorder(3) }}
+                                    alt="">
                                 </img>
                                 <img
                                     src={`../images/Baixo/${data.resourceImg}`}
-                                    className={selectedImgBorder == 4 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('Baixo'); setSelectedImgBorder(4) }}>
+                                    className={selectedImgBorder === 4 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('Baixo'); setSelectedImgBorder(4) }}
+                                    alt="">
                                 </img>
                                 <img
                                     src={`../images/Frente/${data.resourceImg}`}
-                                    className={selectedImgBorder == 5 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('Frente'); setSelectedImgBorder(5) }}>
+                                    className={selectedImgBorder === 5 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('Frente'); setSelectedImgBorder(5) }}
+                                    alt="">
                                 </img>
                                 <img
                                     src={`../images/Atrás/${data.resourceImg}`}
-                                    className={selectedImgBorder == 6 ? 'presImgs' : 'unselectedImg'}
-                                    onClick={() => { setSelectedImg('Atrás'); setSelectedImgBorder(6) }}>
+                                    className={selectedImgBorder === 6 ? 'presImgs' : 'unselectedImg'}
+                                    onClick={() => { setSelectedImg('Atrás'); setSelectedImgBorder(6) }}
+                                    alt="">
                                 </img>
                             </div>
                         </Col>

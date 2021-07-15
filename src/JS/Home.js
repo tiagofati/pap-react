@@ -20,7 +20,7 @@ function Home() {
         
             .then((response) => response.json())
 
-            .then(products => { setBestSellers(products); console.log(products); })
+            .then(products => { setBestSellers(products) })
 
             .catch((error) => {
                 console.error("Error fetching data: ", error);
@@ -36,7 +36,7 @@ function Home() {
         })
             .then((response) => response.json())
 
-            .then(products => { setNewReleases(products); console.log(products); })
+            .then(products => { setNewReleases(products)})
 
             .catch((error) => {
                 console.error("Error fetching data: ", error);
@@ -58,9 +58,9 @@ function Home() {
         return bestSellers.map(
             product =>
                 <Col sm={3} className="d-flex justify-content-center">
-                    <div className="blocks">
-                        <img src={`../images/LateralEsq/${product.resourceImg}`} className="img123"></img>
-                    </div>
+                    <a href={`productsDetails/${product.idProd}`} className="blocks">
+                        <img src={`../images/LateralEsq/${product.resourceImg}`} className="img123" alt=""></img>
+                    </a>
                 </Col>
         )
     }
@@ -69,9 +69,9 @@ function Home() {
         return newReleases.map(
             product =>
                 <Col sm={3} className="d-flex justify-content-center">
-                    <div className="blocks">
-                        <img src={`../images/LateralEsq/${product.resourceImg}`} className="img123"></img>
-                    </div>
+                    <a href={`productsDetails/${product.idProd}`} className="blocks">
+                        <img src={`../images/LateralEsq/${product.resourceImg}`} className="img123" alt=""></img>
+                    </a>
                 </Col>
         )
     }
